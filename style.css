@@ -1,23 +1,25 @@
+/* Général */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #333;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1em;
-    font-weight: normal;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 nav ul {
@@ -35,64 +37,56 @@ nav ul li a {
     text-decoration: none;
     color: #a4a4a4;
     font-weight: normal;
+    transition: color 0.3s;
 }
 
-main {
-    display: flex;
+nav ul li a:hover, .active {
+    color: #fff;
+}
+
+/* Grille des projets */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
     justify-content: center;
-    align-items: center;
-    height: calc(100vh - 60px); /* Full height minus header height */
+}
+
+/* Carte de projet */
+.project {
+    background-color: #111;
     padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
 }
 
-main img {
-    max-width: 30%;
+.project img {
+    width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
-profile {
-        float: right;
-    
-
+.project h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
 }
 
-.behance-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000; /* Behance blue color */
-    color: #fff; /* Text color */
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .behance-button:hover {
-    background-color: #0d0d0d; /* Darker blue on hover */
-  }
+.project p {
+    font-size: 0.9em;
+    color: #aaa;
+}
 
-.linkedin-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000; /* Behance blue color */
-    color: #fff; /* Text color */
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .linkedin-button:hover {
-    background-color: #0d0d0d; /* Darker blue on hover */
-  }
+/* Effet au survol */
+.project:hover {
+    transform: scale(1.05);
+    background-color: #222;
+}
 
-
-.cv-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000; /* Behance blue color */
-    color: #fff; /* Text color */
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .cv-button:hover {
-    background-color: #0d0d0d; /* Darker blue on hover */
-  }
-
+/* Responsive */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
