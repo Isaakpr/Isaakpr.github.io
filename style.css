@@ -1,0 +1,315 @@
+/* Basic body styling */
+body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    height: 100vh; /* Make sure the body takes the full height of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Optional: Set background color */
+    margin: 0; /* Remove default body margin */
+}
+
+
+
+/* HEADER section  */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Section - Sticky at the top */
+.header {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    position: fixed; /* Fix the header to the top */
+    top: 0; /* Position it at the top */
+    left: 0;
+    width: 100%; /* Full width of the screen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    color: #000000;
+    z-index: 1000; /* Keep it on top of other content */
+}
+
+.logo h1 {
+    font-size: 1.5em;
+}
+
+/* Default styles for logo */
+.logo h1 a {
+    color: black;  /* Default text color for the logo */
+}
+
+
+/* Prevent purple color on visited link */
+.logo a:visited {
+    color: rgb(0, 0, 0);           /* Keep the text white after being clicked */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+.navigation li {
+    margin-left: 20px;
+}
+
+.circle-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(255, 237, 73); /* Default yellow color */
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for color and rotation */
+}
+
+/* When the page is in inverted mode, rotate the button and change color */
+body.inverted .circle-toggle {
+    background: rgb(30, 30, 30); /* Dark color when inverted */
+    transform: rotate(180deg); /* Rotate the button 180 degrees */
+}
+
+/* Optional: Add hover effect */
+.circle-toggle:hover {
+    border: 2px solid #ff7b00;
+}
+
+
+.navigation a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ff6f61; /* Custom hover color */
+}
+
+/* Adding space below the fixed header */
+body {
+    padding-top: 60px; /* Prevent content from being hidden behind the header */
+}
+
+/* ACCUEIL SITE  */
+/* Resetting margins and paddings for the accueil section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image-container {
+    display: flex;
+    justify-content: center; /* Horizontally centers the image */
+    align-items: center; /* Vertically centers the image */
+    height: 100vh; /* Optional: makes the container take the full viewport height */
+}
+
+.image-container img {
+    max-width: 600px; /* Adjust this to the desired width of the image */
+    max-height: 600px; /* Adjust this to the desired height of the image */
+    object-fit: contain; /* Ensures the image is contained within the box without distortion */
+}
+
+
+/* GRID section  */
+
+
+.main-content {
+    text-align: center;
+}
+
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Ensures uniform size */
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    opacity: 0.8;
+    filter: grayscale(100%);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* photo contact */
+.contact-content {
+    display: flex; /* Align elements horizontally */
+    justify-content: flex-start; /* Align elements to the left */
+    align-items: center; /* Center vertically */
+    gap: 100px; /* Space between text and image */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.text-content {
+    flex: 1;
+    font-size: 1.0em;
+    color: #1d1d1d;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.contact-image {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+
+
+/* Caroussel SQUARE */
+
+
+/* Overall layout: Content container will hold the carousel and text */
+.content-container {
+    display: flex; /* Flexbox to align carousel and text side by side */
+    align-items: center; /* Vertically center the elements */
+    justify-content: space-between; /* Spread carousel and text */
+    gap: 0px; /* Space between carousel and text */
+    padding: 20px;
+}
+
+/* Carousel styles */
+.carousel {
+    position: absolute;
+    left: 20px;
+    width: 450px;
+    height: 450px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-right: 20px; /* Add right margin to create space between carousel and text */
+}
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container without stretching */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+/* Previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* Text section styles */
+.text-section {
+    width: 35%; /* Text section takes up 35% of the width */
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 550px; /* Reduce left margin to bring text closer to the carousel */
+}
+
+/* Optional: Adjust text padding and margins */
+.text-section h1 {
+    font-size:1.6em;
+    margin-bottom: 15px; /* Reduce bottom margin to bring the text closer together */
+}
+
+
+
+
+/* Invert everything except images and videos */
+.inverted {
+    filter: invert(1);
+    background-color: black; /* Optional for contrast */
+}
+
+/* Prevent images and videos from being inverted */
+.inverted img, 
+.inverted video, 
+.inverted picture, 
+.inverted source
+ {
+
+
+    
+    filter: invert(1) !important; /* Double inversion keeps them normal */
+}
+
+/* Prevent background images from being inverted */
+.inverted * {
+    background-image: none !important;
+}
+
+/* Ensure the overlay text is inverted as well */
+.inverted .gallery .overlay {
+    color: white !important; /* Make sure overlay text is visible */
+    filter: invert(1) !important; /* Invert the text in the overlay */
+}
+
+
+a:visited {
+    color: black; /* Garde la couleur noire après le clic */
+}
