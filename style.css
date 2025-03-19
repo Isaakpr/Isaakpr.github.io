@@ -114,8 +114,8 @@ body {
 }
 
 .image-container img {
-    max-width: 600px; /* Adjust this to the desired width of the image */
-    max-height: 600px; /* Adjust this to the desired height of the image */
+    max-width: 450px; /* Adjust this to the desired width of the image */
+    max-height: 450px; /* Adjust this to the desired height of the image */
     object-fit: contain; /* Ensures the image is contained within the box without distortion */
 }
 
